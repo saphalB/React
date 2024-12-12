@@ -12,8 +12,8 @@ constructor(){
               .setEndpoint(conf.appwriteUrl)
               .setProject(conf.appwriteProjectId);
 
-    this.account = new Account(this.client)          
-}
+               this.account = new Account(this.client)          
+      }
 
 async createAccount({email, password, name}){
 
@@ -58,7 +58,7 @@ async getCurrentUser(){
 async logout(){
     try {
 
-        return await this.account.deleteSessions();
+        await this.account.deleteSessions();
         
     } catch (error) {
         console.log("Appwrite service :: logout :: error", error);
